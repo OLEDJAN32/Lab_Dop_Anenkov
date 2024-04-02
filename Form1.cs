@@ -11,20 +11,62 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 using System.Xml.Linq;
+using System.Timers;
 
 namespace Lab_Dop_Anenkov
 {
     public partial class Form1 : Form
     {
+        private System.Timers.Timer timer;
         public Form1()
         {
             InitializeComponent();
             Database();
+            timer = new System.Timers.Timer();
+            timer.Interval = 3000;
+            timer.Elapsed += checkComplete;
         }
 
+        private void checkComplete(object sender, ElapsedEventArgs e)
+        {
+            DateTime currentDateAndTime = DateTime.Now;
+            DateTime dateToCompare;
+            DateTime timeToCompare;
+            DataGridViewCell cellData;
+            DataGridViewCell cellTime;
+            string inputDate, inputTime;
+
+            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+            {
+                if (this.dataGridView1.Rows[i].Cells[3].Value == "Выполнено") continue;
+                cellData = dataGridView1.Rows[i].Cells[1];
+                cellTime = dataGridView1.Rows[i].Cells[2];
+                inputDate = cellData.Value.ToString();
+                inputTime = cellTime.Value.ToString();
+                dateToCompare = DateTime.ParseExact(inputDate, "dd.MM.yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                timeToCompare = DateTime.ParseExact(inputTime, "HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+                if (dateToCompare.Date > currentDateAndTime.Date)
+                {
+                    this.dataGridView1.Rows[i].Cells[3].Value = "Выполняется";
+                    return;
+                }
+                else
+                {
+                    if (dateToCompare.Date == currentDateAndTime.Date && timeToCompare.TimeOfDay >= currentDateAndTime.TimeOfDay)
+                    {
+                        this.dataGridView1.Rows[i].Cells[3].Value = "Выполняется";
+                        return;
+                    }
+                    else
+                    {
+                        this.dataGridView1.Rows[i].Cells[3].Value = "Просрочено";
+                    }
+                }
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            timer.Start();
         }
 
         private void Database()
@@ -147,6 +189,12 @@ namespace Lab_Dop_Anenkov
                 writer.Write(complete + "\n");
             }
             writer.Close();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timer.Stop();
+            timer.Dispose();
         }
     }
 }

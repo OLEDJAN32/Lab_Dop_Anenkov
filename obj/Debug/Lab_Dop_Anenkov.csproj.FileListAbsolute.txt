@@ -1,0 +1,11 @@
+C:\Users\anenk\source\repos\Lab_Dop_Anenkov\bin\Debug\Lab_Dop_Anenkov.exe.config
+C:\Users\anenk\source\repos\Lab_Dop_Anenkov\bin\Debug\Lab_Dop_Anenkov.exe
+C:\Users\anenk\source\repos\Lab_Dop_Anenkov\bin\Debug\Lab_Dop_Anenkov.pdb
+C:\Users\anenk\source\repos\Lab_Dop_Anenkov\obj\Debug\Lab_Dop_Anenkov.csproj.AssemblyReference.cache
+C:\Users\anenk\source\repos\Lab_Dop_Anenkov\obj\Debug\Lab_Dop_Anenkov.csproj.SuggestedBindingRedirects.cache
+C:\Users\anenk\source\repos\Lab_Dop_Anenkov\obj\Debug\Lab_Dop_Anenkov.Properties.Resources.resources
+C:\Users\anenk\source\repos\Lab_Dop_Anenkov\obj\Debug\Lab_Dop_Anenkov.csproj.GenerateResource.cache
+C:\Users\anenk\source\repos\Lab_Dop_Anenkov\obj\Debug\Lab_Dop_Anenkov.csproj.CoreCompileInputs.cache
+C:\Users\anenk\source\repos\Lab_Dop_Anenkov\obj\Debug\Lab_Dop_Anenkov.exe
+C:\Users\anenk\source\repos\Lab_Dop_Anenkov\obj\Debug\Lab_Dop_Anenkov.pdb
+C:\Users\anenk\source\repos\Lab_Dop_Anenkov\obj\Debug\Lab_Dop_Anenkov.Form1.resources

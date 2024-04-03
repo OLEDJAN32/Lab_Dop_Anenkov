@@ -44,7 +44,7 @@ namespace Lab_Dop_Anenkov
                 inputDate = cellData.Value.ToString();
                 inputTime = cellTime.Value.ToString();
                 dateToCompare = DateTime.ParseExact(inputDate, "dd.MM.yyyy", System.Globalization.CultureInfo.InvariantCulture);
-                timeToCompare = DateTime.ParseExact(inputTime, "HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+                timeToCompare = DateTime.ParseExact(inputTime, "H:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
                 if (dateToCompare.Date > currentDateAndTime.Date)
                 {
                     this.dataGridView1.Rows[i].Cells[3].Value = "Выполняется";
@@ -136,7 +136,7 @@ namespace Lab_Dop_Anenkov
             inputDate = cellData.Value.ToString();
             inputTime = cellTime.Value.ToString();
             dateToCompare = DateTime.ParseExact(inputDate, "dd.MM.yyyy", System.Globalization.CultureInfo.InvariantCulture);
-            timeToCompare = DateTime.ParseExact(inputTime, "HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+            timeToCompare = DateTime.ParseExact(inputTime, "H:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
             if (dateToCompare.Date > currentDateAndTime.Date)
             {
                 this.dataGridView1.Rows[index].Cells[3].Value = "Выполняется";

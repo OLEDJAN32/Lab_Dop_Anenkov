@@ -77,6 +77,7 @@ namespace Lab_Dop_Anenkov
                 while ((line = reader.ReadLine()) != null)
                 {
                     string[] words = line.Split(' ');
+                    words[0] = words[0].Replace("_", " ");
                     Add(words[0], words[1], words[2], words[3]);
                 }
                 reader.Close();
@@ -182,6 +183,7 @@ namespace Lab_Dop_Anenkov
                 date = cellDate.Value.ToString();
                 time = cellTime.Value.ToString();
                 complete = cellComplete.Value.ToString();
+                node = node.Replace(" ", "_");
 
                 writer.Write(node + " ");
                 writer.Write(date + " ");
